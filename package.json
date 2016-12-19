@@ -4,9 +4,10 @@
   "private": true,
   "scripts": {
     "start": "npm run dev",
-    "dev": "concurrently --kill-others \"npm run start-watch\" \"npm run wp-server\"",
+    "dev": "concurrently --kill-others \"npm run start-watch\" \"npm run wp-server\" \"npm run src-watcher\"",
     "start-watch": "nodemon ./bin/www",
-    "wp-server": "webpack-dev-server --hot --content-base views/"
+    "wp-server": "webpack-dev-server --hot --content-base views/",
+    "src-watcher": "webpack -d --watch"
 
   },
   "dependencies": {
@@ -18,7 +19,6 @@
     "express": "~4.13.4",
     "flux": "^3.1.2",
     "history": "^4.5.0",
-    "materialize-css": "^0.97.8",
     "morgan": "~1.7.0",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
