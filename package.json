@@ -6,7 +6,7 @@
     "start": "npm run dev",
     "dev": "concurrently --kill-others \"npm run start-watch\" \"npm run wp-server\"",
     "start-watch": "nodemon ./bin/www",
-    "wp-server": "webpack -d --watch"
+    "wp-server": "webpack-dev-server --hot --content-base views/"
 
   },
   "dependencies": {

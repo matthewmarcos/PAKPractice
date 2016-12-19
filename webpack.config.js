@@ -5,7 +5,7 @@ const path = require('path');
     entry: './src/index.jsx',
     output: {
         path: path.join(__dirname, 'public'),
-        filename: 'index.js'
+        filename: 'bundle.js'
     },
     devServer: {
         inline: true,
