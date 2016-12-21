@@ -30,4 +30,4 @@ node_modules
 npm-debug.log
 
 # public - output of webpack
-public/bundle.js*
+public
