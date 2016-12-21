@@ -5,9 +5,11 @@ const path = require('path');
     entry: './src/index.jsx',
     output: {
         path: path.join(__dirname, 'public'),
+        publicPath: 'http://localhost:8080',
         filename: 'bundle.js'
     },
     devServer: {
+        hot: true,
         inline: true,
         port: 8000,
         stats: {
@@ -35,10 +37,17 @@ const path = require('path');
             query: {
                 presets: ['es2015', 'react']
             }
+        },
+        {
+            test: /\.json$/,
+            loader: 'json-loader'
         },{
             test: /\.css$/,
             loader: 'style-loader!css-loader',
-        }]
+        },
+        { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader:"url?limit=10000&mimetype=application/font-woff" },
+        { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file" }
+        ]
     }
 };
 
